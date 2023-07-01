@@ -1,0 +1,37 @@
+<%- include ("./partials/header") -%>
+
+    <h1>Home</h1>
+    <p>
+        <%= homeStartingContent %>
+    </p>
+
+    <form action="/compose" method="get">
+        <button class="btn btn-primary" type="submit"> Add New </button>
+    </form>
+
+    <% if(allPosts.length !== 0) {%>
+    <br><h2>Published Blogs</h2>
+    <% } %>
+
+    <% allPosts.forEach(function(post){ %>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <a href="/showpost/<%= _.snakeCase(post.title)%>/<%= post.id %>">
+                <h4 class="card-title" >
+                    <%= post.title %>
+                </h4></a>
+                <p class="card-text">
+                    <% if (post.content.length > 250){ %>
+                        <%= post.content.substring(0, 250) + "..." %>
+                    <a href="/showpost/<%= _.snakeCase(post.title)%>/<%= post.id %>"> Read more </a>
+                    <%} else { %>
+                    <%= post.content %>
+                    <% } %>
+                </p>
+            </div>
+            </div>
+        <%})%>
+
+
+<%- include ("./partials/footer") -%>
