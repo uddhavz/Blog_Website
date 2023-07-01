@@ -24,7 +24,7 @@ To run the Blob website locally, follow these steps:
 1. Clone this repository to your local machine using the following command:
 
    ```
-   git clone [https://github.com/your-username/blob-website.git](https://github.com/uddhavz/Blog_Website.git)
+   git clone https://github.com/uddhavz/Blog_Website.git
    ```
 
 2. Navigate to the project directory:
